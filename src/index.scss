@@ -31,9 +31,45 @@ code {
   justify-content: center;
 }
 
+.skeleton {
+  height: 100%;
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.skeleton-item {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.name {
+  width: 90px;
+}
+
+.email {
+  width: 180px;
+}
+
+.info {
+  margin-left: 10px;
+}
+
+.profile {
+  width: 60px;
+  height: 60px;
+}
+
 .select-button {
   background: 0;
   outline: 0;
+  border: 0;
   padding: 10px 30px;
   margin: 0px 15px;
   border-radius: 10px;

@@ -1,24 +1,33 @@
 import React, { useState } from 'react';
 import LottieLightsaber from './LottieLightsaber';
+import SkeletonDisplay from './Skeleton';
+
+const buttonEnum = {
+  lightsaber: 'Lightsaber',
+  lottie: 'Lottie',
+  skeleton: 'Skeleton',
+  framer: 'Framer',
+};
 
 const Buttons = ({ active, setActive }) => {
   return (
     <div className="buttons">
-      <button type="button" className={`select-button ${active === 'Lightsaber' ? 'selected' : ''}`} onClick={() => { setActive('Lightsaber'); }}>Lightsaber</button>
-      <button type="button" className={`select-button ${active === 'Lottie' ? 'selected' : ''}`} onClick={() => { setActive('Lottie'); }}>Lottie Examples</button>
-      <button type="button" className={`select-button ${active === 'Skeleton' ? 'selected' : ''}`} onClick={() => { setActive('Skeleton'); }}>Skeleton</button>
-      <button type="button" className={`select-button ${active === 'Framer' ? 'selected' : ''}`} onClick={() => { setActive('Framer'); }}>Framer Motion</button>
+      <button type="button" className={`select-button ${active === buttonEnum.lightsaber ? 'selected' : ''}`} onClick={() => { setActive(buttonEnum.lightsaber); }}>Lightsaber</button>
+      <button type="button" className={`select-button ${active === buttonEnum.lottie ? 'selected' : ''}`} onClick={() => { setActive(buttonEnum.lottie); }}>Lottie Examples</button>
+      <button type="button" className={`select-button ${active === buttonEnum.skeleton ? 'selected' : ''}`} onClick={() => { setActive(buttonEnum.skeleton); }}>Skeleton</button>
+      <button type="button" className={`select-button ${active === buttonEnum.framer ? 'selected' : ''}`} onClick={() => { setActive(buttonEnum.framer); }}>Framer Motion</button>
     </div>
   );
 };
 
 const App = () => {
-  const [active, setActive] = useState('Lightsaber');
+  const [active, setActive] = useState(buttonEnum.lightsaber);
 
   return (
     <>
       <div className="App">
-        <LottieLightsaber />
+        {active === buttonEnum.lightsaber && <LottieLightsaber />}
+        {active === buttonEnum.skeleton && <SkeletonDisplay />}
       </div>
       <Buttons active={active} setActive={setActive} />
     </>

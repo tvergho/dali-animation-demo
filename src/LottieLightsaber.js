@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from 'react-lottie';
-import animationData from './lightsaber.json';
+import animationData from './lightsaber3.json';
 
 const defaultOptions = {
   loop: true,
@@ -15,8 +15,8 @@ const LottieLightsaber = () => {
   return (
     <div className="lottie">
       <Lottie options={defaultOptions}
-        height={400}
         width={400}
+        height={400}
       />
     </div>
   );
