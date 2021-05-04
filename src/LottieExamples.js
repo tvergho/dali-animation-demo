@@ -17,7 +17,6 @@ const LottieExamples = () => {
     <div className="lottie-examples">
       <Lottie options={{ ...defaultOptions, animationData: jumping }}
         width="30%"
-        height="auto"
       />
       <Lottie options={{ ...defaultOptions, animationData: heart }}
         width="30%"
