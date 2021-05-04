@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import LottieLightsaber from './LottieLightsaber';
 import SkeletonDisplay from './Skeleton';
+import Framer from './Framer';
 
 const buttonEnum = {
   lightsaber: 'Lightsaber',
@@ -28,6 +29,7 @@ const App = () => {
       <div className="App">
         {active === buttonEnum.lightsaber && <LottieLightsaber />}
         {active === buttonEnum.skeleton && <SkeletonDisplay />}
+        {active === buttonEnum.framer && <Framer />}
       </div>
       <Buttons active={active} setActive={setActive} />
     </>
