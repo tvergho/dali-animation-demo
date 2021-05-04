@@ -9,6 +9,27 @@ import { motion, useAnimation, transform } from 'framer-motion';
 const mapRemainingToColor = transform([10, 2], ['#ff008c', '#ccc']);
 const mapRemainingToSpringVelocity = transform([10, 0], [50, 0]);
 
+const list = {
+  visible: {
+    opacity: 1,
+    transition: {
+      when: 'beforeChildren',
+      staggerChildren: 0.3,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    transition: {
+      when: 'afterChildren',
+    },
+  },
+};
+
+const item = {
+  visible: { opacity: 1, x: 0 },
+  hidden: { opacity: 0, x: -100 },
+};
+
 const Framer = () => {
   const [value, setValue] = useState(0);
   const controls = useAnimation();
@@ -68,6 +89,17 @@ const Framer = () => {
           dragElastic={0.1}
         />
       </div>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={list}
+        transition={{ duration: 1.5 }}
+        className="list"
+      >
+        <motion.div variants={item} className="list-item" />
+        <motion.div variants={item} className="list-item" />
+        <motion.div variants={item} className="list-item" />
+      </motion.div>
     </div>
   );
 };
