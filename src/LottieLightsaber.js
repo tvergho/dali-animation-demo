@@ -6,7 +6,7 @@ const defaultOptions = {
   loop: true,
   autoplay: true,
   animationData,
-  rendererSettings: {
+  rendererSettings: { // https://github.com/airbnb/lottie-web/wiki/Renderer-Settings
     preserveAspectRatio: 'xMidYMid slice',
   },
 };
