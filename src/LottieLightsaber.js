@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from 'react-lottie';
-import animationData from './animations/lightsaber3.json';
+import animationData from './animations/new_saber.json';
 
 const defaultOptions = {
   loop: true,
