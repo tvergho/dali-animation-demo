@@ -30,7 +30,6 @@ const Framer = () => {
   return (
     <div className="framer">
       <div className="framer-item">
-
         <motion.div
           animate={{
             scale: [1, 2, 2, 1, 1, 1],
